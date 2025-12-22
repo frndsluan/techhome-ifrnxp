@@ -1,89 +1,97 @@
+.header {
+  background-color: #8c52ff; /* Roxo vibrante fiel à imagem */
+  width: 100%;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 .container {
+  max-width: 1600px; /* Aumentado para telas maiores */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
-  height: 15rem;
-  padding: 5rem;
-  background-color: var(--primary);
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+  padding: 20px 40px; /* Padding generoso */
+  min-height: 100px; /* Altura robusta para o cabeçalho */
 }
 
-.container h1 {
-  font-size: 5rem;
-  font-weight: bolder;
-  color: var(--background);
+/* Logo - Agora com destaque total */
+.logoImage {
+  height: 80px; /* Aumentado significativamente */
+  width: auto;
+  object-fit: contain;
 }
 
-.actions {
+/* Barra de Busca - Maior e mais visível */
+.searchBar {
+  background-color: white;
+  height: 50px; 
+  border-radius: 30px;
   display: flex;
   align-items: center;
-  justify-items: center;
-  gap: 2rem;
+  padding: 0 20px;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 50px;
 }
 
-.link {
-  font-size: 2rem;
-  text-decoration: none;
-  color: var(--primary);
-  color: var(--text);
-  transition: color 0.3s;
+.searchIcon {
+  color: #8338ec;
 }
 
-.link:hover {
-  color: var(--primary-dark);
-}
-
-.containerImg img {
-  height: auto;
+.searchBar input {
+  border: none;
+  background: transparent;
   width: 100%;
-  max-width: 20rem;
+  outline: none;
+  padding-left: 15px;
+  font-size: 1.1rem;
 }
 
-.container p {
-  font-size: 1.5rem;
+/* Links de Navegação */
+.navLinks {
+  display: flex;
+  gap: 35px;
 }
 
-.cartInfo {
-  border-radius: 3rem;
-  background-color: var(--primary-light);
-  color: var(--primary-contrast-dark);
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.cartIcon {
-  position: relative;
-  display: inline-block;
-}
-
-.cartCount {
-  position: absolute;
-  top: -0.8rem;
-  right: -2rem;
-  font-size: 1.5rem;
-  border-radius: 1rem;
-  background-color: var(--primary-dark);
-  color: var(--gray-100);
-  padding: 0.2rem 0.6rem;
-  font-weight: bold;
-  z-index: 1;
-}
-
-.welcomeMessage {
-  font-size: 1.5rem;
-  color: var(--text);
-  margin-right: 1rem;
+.navLinks a {
+  color: white;
   text-decoration: none;
+  font-size: 1rem; /* Fonte maior para leitura clara */
+  font-weight: 800; /* Peso extra como no design */
+  white-space: nowrap;
 }
 
-.welcomeMessage:hover {
-  text-decoration: underline;
+/* Seção de Autenticação */
+.authSection {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  width: 2.5px;
+  height: 45px; /* Divisória vertical mais alta */
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 25px;
+}
+
+.userIcon {
+  margin-right: 15px;
+}
+
+.authText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.authText span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.authText strong {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
 }

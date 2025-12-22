@@ -1,64 +1,42 @@
 import styles from "./MyHeader.module.css";
-import { ShoppingBasket } from "lucide-react";
+import { Search, User } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
-import { ThemeToggle } from "./ThemeToggle";
-import { SessionContext } from "../context/SessionContext";
+import logoImg from "../assets/imgs/image.png";
 
 export function Header() {
-  const { cart } = useContext(CartContext);
-  const { session } = useContext(SessionContext);
-
   return (
-    <div className={styles.container}>
-      <div>
-        <Link to="/" className={styles.link}>
-          <h1>TJA Megastore</h1>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        
+        {/* Logo - Agora em escala maior */}
+        <Link to="/" className={styles.logoContainer}>
+          <img src={logoImg} alt="TECHHOME" className={styles.logoImage} />
         </Link>
-        {session && (
-          <Link to="/user" className={styles.welcomeMessage}>
-            Welcome, {session.user.user_metadata.username}{" "}
-            {session.user.user_metadata.admin && "⭐"}
-          </Link>
-        )}
-      </div>
 
-      <div className={styles.actions}>
-        {!session && (
-          <>
-            <Link to="/signin" className={styles.link}>
-              Sign In
-            </Link>
-            <Link to="/register" className={styles.link}>
-              Register
-            </Link>
-          </>
-        )}
-        <ThemeToggle />
-        <Link to="/cart" className={styles.link}>
-          <div className={styles.cartInfo}>
-            <div className={styles.cartIcon}>
-              <ShoppingBasket size={32} />
-              {cart.length > 0 && (
-                <span className={styles.cartCount}>
-                  {cart.reduce((total, item) => total + item.quantity, 0)}
-                </span>
-              )}
-            </div>
+        {/* Barra de Busca - Mais robusta */}
+        <div className={styles.searchBar}>
+          <Search size={24} className={styles.searchIcon} />
+          <input type="text" placeholder="Pesquisar..." />
+        </div>
 
-            <p>
-              Total: ${" "}
-              {cart
-                .reduce(
-                  (total, product) => total + product.price * product.quantity,
-                  0
-                )
-                .toFixed(2)}
-            </p>
+        {/* Links - Fonte maior e mais espaçamento */}
+        <nav className={styles.navLinks}>
+          <Link to="/">LOJA DE GAMES</Link>
+          <Link to="/">LOJA DE PEÇAS</Link>
+          <Link to="/">SOBRE NÓS</Link>
+        </nav>
+
+        {/* Seção de Login - Ícone e textos ampliados */}
+        <div className={styles.authSection}>
+          <div className={styles.divider}></div>
+          <User size={36} className={styles.userIcon} />
+          <div className={styles.authText}>
+            <span>ENTRE OU</span>
+            <strong>CADASTRE-SE</strong>
           </div>
-        </Link>
+        </div>
+
       </div>
-    </div>
+    </header>
   );
 }
