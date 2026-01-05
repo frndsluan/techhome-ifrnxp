@@ -39,12 +39,12 @@ export function ProductList() {
         <input
           ref={searchInput}
           type="text"
-          placeholder="Search products..."
+          placeholder="Buscar produtos..."
           className={styles.searchInput}
           onChange={handleSearch}
         />
         <button className={styles.searchButton} onClick={handleClear}>
-          CLEAR
+          LIMPAR BUSCA
         </button>
       </div>
       <div className={styles.productList}>

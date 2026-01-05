@@ -1,41 +1,71 @@
-import styles from "./MyHeader.module.css";
-import { Search, User } from "lucide-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { User, ShoppingBasket } from "lucide-react";
+import { CartContext } from "../context/CartContext";
+import { SessionContext } from "../context/SessionContext";
+import { ThemeToggle } from "./ThemeToggle";
+
+import styles from "./MyHeader.module.css";
 import logoImg from "../assets/imgs/image.png";
 
 export function Header() {
+  const { cart } = useContext(CartContext);
+  const { session } = useContext(SessionContext);
+
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cart.reduce((total, prod) => total + prod.price * prod.quantity, 0).toFixed(2);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         
-        {/* Logo - Agora em escala maior */}
+        {/* Lado Esquerdo: Logo */}
         <Link to="/" className={styles.logoContainer}>
           <img src={logoImg} alt="TECHHOME" className={styles.logoImage} />
         </Link>
 
-        {/* Barra de Busca - Mais robusta */}
-        <div className={styles.searchBar}>
-          <Search size={24} className={styles.searchIcon} />
-          <input type="text" placeholder="Pesquisar..." />
-        </div>
+        {/* Lado Direito: Tudo alinhado horizontalmente */}
+        <div className={styles.rightSide}>
+          
+          <nav className={styles.navLinks}>
+            <Link to="/about">SOBRE NÓS</Link>
+          </nav>
 
-        {/* Links - Fonte maior e mais espaçamento */}
-        <nav className={styles.navLinks}>
-          <Link to="/">LOJA DE GAMES</Link>
-          <Link to="/">LOJA DE PEÇAS</Link>
-          <Link to="/">SOBRE NÓS</Link>
-        </nav>
-
-        {/* Seção de Login - Ícone e textos ampliados */}
-        <div className={styles.authSection}>
-          <div className={styles.divider}></div>
-          <User size={36} className={styles.userIcon} />
-          <div className={styles.authText}>
-            <span>ENTRE OU</span>
-            <strong>CADASTRE-SE</strong>
+          <div className={styles.themeContainer}>
+            <ThemeToggle />
           </div>
-        </div>
 
+          <Link to="/cart" className={styles.cartSection}>
+            <div className={styles.cartIconWrapper}>
+              <ShoppingBasket size={28} />
+              {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
+            </div>
+            <span className={styles.cartTotal}>R$ {totalPrice}</span>
+          </Link>
+
+          <div className={styles.authGroup}>
+            <div className={styles.divider}></div>
+            <User size={32} className={styles.userIcon} />
+            <div className={styles.authText}>
+              {!session ? (
+                <>
+                  <div className={styles.loginRow}>
+                    <Link to="/signin" className={styles.link}>ENTRE</Link>
+                    <span className={styles.separator}>OU</span>
+                  </div>
+                  <Link to="/register" className={styles.link}>
+                    <strong>CADASTRE-SE</strong>
+                  </Link>
+                </>
+              ) : (
+                <Link to="/user" className={styles.link}>
+                  Olá, {session.user.user_metadata.username}
+                </Link>
+              )}
+            </div>
+          </div>
+
+        </div>
       </div>
     </header>
   );

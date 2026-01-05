@@ -9,16 +9,17 @@ export function Cart() {
 
   return (
     <div className={styles.cart}>
-      <h2>Shopping Cart</h2>
+      <h2>Carrinho de Compras</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>Seu carrinho está vazio.</p>
       ) : (
         <ul>
           {cart.map((product, index) => (
             <li key={index} className={styles.cartItem}>
               <img src={product.thumbnail} alt={product.title} />
               <h3>{product.title}</h3>
-              <p>${product.price.toFixed(2)}</p>
+              {/* Ajustado para exibir R$ e usar vírgula */}
+              <p>R$ {product.price.toFixed(2).replace(".", ",")}</p>
               <div className={styles.quantityControls}>
                 <button
                   disabled={product.quantity <= 1}
@@ -40,8 +41,9 @@ export function Cart() {
               <button
                 onClick={() => removeFromCart(product.id)}
                 className={styles.removeButton}
+                title="Remover item"
               >
-                <Trash />
+                <Trash size={18} />
               </button>
             </li>
           ))}
@@ -49,7 +51,7 @@ export function Cart() {
       )}
       {cart.length > 0 && (
         <button onClick={clearCart} className={styles.removeButton}>
-          CLEAR CART <Trash />
+          ESVAZIAR CARRINHO <Trash size={18} />
         </button>
       )}
     </div>

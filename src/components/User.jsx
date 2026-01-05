@@ -83,31 +83,31 @@ export function User() {
     <div className={styles.container}>
       {session ? (
         <>
-          <h1>{isAdmin ? "Admin Account" : "User Account"}</h1>
+          <h1>{isAdmin ? "Conta de Administrador" : "Conta de Usuário"}</h1>
           <div className={styles.userInfo}>
             <p>
-              <strong>Username:</strong> {session.user.user_metadata.username}
+              <strong>Nome de usuário:</strong> {session.user.user_metadata.username}
             </p>
             <p>
-              <strong>Email:</strong> {session.user.email}
+              <strong>E-mail:</strong> {session.user.email}
             </p>
             <p>
               <strong>ID:</strong> {session.user.id}
             </p>
           </div>
           <button className={styles.button} onClick={handleSignOut}>
-            SIGN OUT
+            SAIR DA CONTA
           </button>
 
           {isAdmin && (
             <div className={styles.adminPanel}>
-              <h2>Admin Panel</h2>
+              <h2>Painel de Controle</h2>
 
-              <h3>Insert New Product</h3>
+              <h3>Inserir Novo Produto</h3>
               <div className={styles.form}>
                 <input
                   type="text"
-                  placeholder="Title"
+                  placeholder="Título"
                   value={newProduct.title}
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, title: e.target.value })
@@ -115,7 +115,7 @@ export function User() {
                 />
                 <input
                   type="text"
-                  placeholder="Description"
+                  placeholder="Descrição"
                   value={newProduct.description}
                   onChange={(e) =>
                     setNewProduct({
@@ -126,7 +126,7 @@ export function User() {
                 />
                 <input
                   type="number"
-                  placeholder="Price"
+                  placeholder="Preço"
                   value={newProduct.price}
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, price: e.target.value })
@@ -134,7 +134,7 @@ export function User() {
                 />
                 <input
                   type="text"
-                  placeholder="Thumbnail URL"
+                  placeholder="URL da Imagem (Thumbnail)"
                   value={newProduct.thumbnail}
                   onChange={(e) =>
                     setNewProduct({
@@ -143,11 +143,11 @@ export function User() {
                     })
                   }
                 />
-                <button onClick={handleInsert}>ADD PRODUCT</button>
+                <button onClick={handleInsert}>ADICIONAR PRODUTO</button>
               </div>
 
-              <h3>Manage Products</h3>
-              {loading && <p>Loading products...</p>}
+              <h3>Gerenciar Produtos</h3>
+              {loading && <p>Carregando produtos...</p>}
               {error && <p>❌ {error}</p>}
               {visibleProducts.map((product) => (
                 <div key={product.id} className={styles.productItem}>
@@ -194,22 +194,22 @@ export function User() {
                         }
                       />
                       <button onClick={() => handleUpdate(product.id)}>
-                        SAVE
+                        SALVAR
                       </button>
                       <button onClick={() => setEditingProduct(null)}>
-                        CANCEL
+                        CANCELAR
                       </button>
                     </>
                   ) : (
                     <>
                       <p>
-                        <strong>{product.title}</strong> - ${product.price}
+                        <strong>{product.title}</strong> - R${product.price}
                       </p>
                       <button onClick={() => setEditingProduct(product)}>
-                        EDIT
+                        EDITAR
                       </button>
                       <button onClick={() => handleDelete(product.id)}>
-                        DELETE
+                        EXCLUIR
                       </button>
                     </>
                   )}
@@ -219,7 +219,7 @@ export function User() {
           )}
         </>
       ) : (
-        <h1>User not signed in!</h1>
+        <h1>Usuário não está logado!</h1>
       )}
     </div>
   );
