@@ -3,8 +3,7 @@ Projeto desenvolvido nas disciplinas **Programação para Internet (PPI)**, **Fu
 
 ## 👥 Equipe do projeto
 - **Luan Fernandes** – Lógica da aplicação, integração com Supabase, backend, Docker e estrutura geral do projeto  
-- **Antônio Flávio** – Front-end (CSS e estilização da interface)
-GitHub: https://github.com/yNotFlaviio  
+- **Antônio Flávio** ([GitHub](https://github.com/yNotFlaviio)) – Front-end (CSS e estilização da interface)
 
 ## Sobre o projeto
 A **TechHome** é uma aplicação web voltada para o segmento de tecnologia, reunindo **venda de laptops** em um único ambiente, com foco em usabilidade, organização visual e persistência de dados.
