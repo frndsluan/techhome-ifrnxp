@@ -25,8 +25,7 @@ Desenvolver uma aplicação web moderna de e-commerce, aplicando conceitos de **
 - Interface moderna inspirada em e-commerces de tecnologia  
 - Cadastro e login de usuários (Supabase Auth)  
 - Persistência de dados no banco remoto  
-- Carrinho de compras dinâmico  
-- Organização por categorias (Games, Peças, etc.)  
+- Carrinho de compras dinâmico
 - Área do usuário  
 - Modo administrador  
 - Tema claro/escuro  
