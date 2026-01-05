@@ -1,29 +1,47 @@
-# PPI 2025 – Luan Fernandes
+# 🏠 TechHome – Tudo em um só lugar
+Projeto desenvolvido nas disciplinas **Programação para Internet (PPI)*,*Fundamentos de sistemas operacionais e Sistemas operacionais de redes* e *Projeto de Desenvolvimento de Software (PDS)** – IFRN Campus Macau.
 
-Projeto desenvolvido na disciplina **Programação para Internet (PPI)** – IFRN Campus Macau.
+## 👥 Equipe do projeto
+- **Luan Fernandes** – Lógica da aplicação, integração com Supabase, backend, Docker e estrutura geral do projeto  
+- **Antônio Flávio** – Front-end (CSS e estilização da interface)
+GitHub: https://github.com/yNotFlaviio  
+
+## Sobre o projeto
+A **TechHome** é uma aplicação web voltada para o segmento de tecnologia, reunindo **venda de laptops** em um único ambiente, com foco em usabilidade, organização visual e persistência de dados.
 
 ## 🧠 Objetivo
-Desenvolver uma aplicação web moderna, aplicando conceitos de **front-end**, **componentização** e **integração com banco de dados** via **Supabase**, com foco em persistência de dados do carrinho de compras.
+Desenvolver uma aplicação web moderna de e-commerce, aplicando conceitos de **front-end**, **componentização**, **autenticação de usuários** e **persistência de dados**, com integração ao **Supabase** e suporte a **Docker** para padronização do ambiente de desenvolvimento.
 
 ## 🧰 Tecnologias utilizadas
 - React.js  
 - JavaScript (ES6+)  
 - HTML5  
-- CSS3 (módulos CSS)  
-- Supabase (serviços de autenticação e banco de dados)  
+- CSS3 (CSS Modules)  
+- Supabase (autenticação e banco de dados)  
 - Vite  
+- Docker  
+- Docker Compose  
 
 ## ⚙️ Funcionalidades principais
+- Interface moderna inspirada em e-commerces de tecnologia  
 - Cadastro e login de usuários (Supabase Auth)  
 - Persistência de dados no banco remoto  
 - Carrinho de compras dinâmico  
-- Modo administrador e página de usuário  
-- Tema claro/escuro (ThemeToggle)  
+- Organização por categorias (Games, Peças, etc.)  
+- Área do usuário  
+- Modo administrador  
+- Tema claro/escuro  
+
+## 🐳 Uso do Docker
+O projeto conta com suporte ao **Docker**, permitindo:
+- Ambiente de desenvolvimento padronizado  
+- Facilidade de execução em diferentes máquinas  
+- Redução de problemas de configuração local  
 
 ## 🚀 Como executar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/frndsluan/ppi2025_LuanFernandes
+   git clone https://github.com/frndsluan/techhome-ifrnxp
    ```
 2. Instale as dependências:
    ```bash
@@ -38,7 +56,7 @@ Desenvolver uma aplicação web moderna, aplicando conceitos de **front-end**, *
 http://localhost:3000/
 
 ## 📚 Status
-✅ Projeto em andamento – versão com persistência via Supabase implementada.
+✅ Projeto em desenvolvimento – base funcional implementada com autenticação, carrinho e persistência via Supabase.
 
 ## 📜 Licença
 MIT – Uso educacional e acadêmico.
