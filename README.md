@@ -1,5 +1,5 @@
 # 🏠 TechHome – Tudo em um só lugar
-Projeto desenvolvido nas disciplinas **Programação para Internet (PPI)*,*Fundamentos de sistemas operacionais e Sistemas operacionais de redes* e *Projeto de Desenvolvimento de Software (PDS)** – IFRN Campus Macau.
+Projeto desenvolvido nas disciplinas **Programação para Internet (PPI)*, *Fundamentos de sistemas operacionais e Sistemas operacionais de redes* e *Projeto de Desenvolvimento de Software (PDS)** – IFRN Campus Macau.
 
 ## 👥 Equipe do projeto
 - **Luan Fernandes** – Lógica da aplicação, integração com Supabase, backend, Docker e estrutura geral do projeto  
