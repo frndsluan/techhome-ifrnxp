@@ -9,6 +9,7 @@ import { SessionProvider } from "./context/SessionContext";
 import { Login } from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import { User } from "./components/User";
+import { About } from "./components/About";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/signin" element={<Login value="signin" />} />
             <Route path="/register" element={<Login value="register" />} />
             <Route path="/user" element={<User />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </CartProvider>
       </SessionProvider>
